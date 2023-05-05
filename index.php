@@ -14,6 +14,7 @@
         <a href="ajouter.php" class="btnAdd"><i class="fa-solid fa-circle-plus"></i>Ajouter</a>
         <table>
             <tr id="items">
+                <th>Référence</th>
                 <th>Nom</th>
                 <th>Description</th>
                 <th>Prix d'achat</th>
@@ -30,6 +31,7 @@
                     while($row=mysqli_fetch_assoc($req)){
                         ?>
                         <tr>
+                            <td><?= "#" . $row['id']?></td>
                             <td><?=$row['name']?></td>
                             <td><?= strlen($row['desc']) > 50 ? substr($row['desc'], 0, 50) . "..." : $row['desc']?></td>
                             <td><?=$row['buy']?></td>
