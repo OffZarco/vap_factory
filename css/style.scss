@@ -1,0 +1,152 @@
+// Color
+$red: #EB5353;
+$green: #36AE7C;
+$blue: #187498;
+$yellow: #F9D923;
+$white: #f6f8f8;
+$grey: #999;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+// Bouton Add
+.btnAdd {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    
+    margin-bottom: 20px;
+    background-color: $blue;
+    padding: 8px 10px;
+    color: $white;
+    border-radius: 5px;
+
+    .fa-solid {
+        font-size: 22px;
+        padding: 0 5px;
+    }
+}
+
+// Tableau
+
+table {
+    border-collapse: collapse;
+
+    th {
+        font-size: 16px;
+        border-bottom: 2px solid $blue;
+        padding: 5px 20px;
+        font-weight: 500;
+    }
+
+    td {
+        font-weight: 400;
+        padding: 5px 30px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .fa-solid {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 18px;   
+
+        &.fa-pen {
+            color: $green;
+        }
+        &.fa-trash {
+            color: $red;
+            
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+
+    tr:nth-child(2n) {
+        background-color: $white;
+        
+        & td {
+            border-bottom: 1px solid #e0e0e0;
+            border-top: 1px solid #e0e0e0;
+        }
+    }
+}
+
+
+
+// Form
+.form {
+    width: 500px;
+    background-color: $white;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+
+    & .btnBack {
+        display: flex;
+        align-items: center;
+        color: $green;
+        text-decoration: none;
+
+        & i {
+            padding-right: 5px;
+        }
+    }
+
+    & form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & h2 {
+        margin: 10px 0;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    & .errorMsg {
+        color: $red;
+    }
+
+    & label {
+        margin-top: 5px;
+    }
+
+    & input {
+        padding: 5px;
+        border: 1px solid $grey;
+        outline: none;
+        margin-top: 2px;
+        
+        &:focus {
+            border: 1px solid $blue;
+        }
+
+        &[type="submit"] {
+            margin-top: 5px;
+            background-color: $blue;
+            color: $white;
+            border: 1px solid $blue;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
+}
