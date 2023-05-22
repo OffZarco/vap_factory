@@ -17,6 +17,13 @@
         extract($_POST);
         if (isset($name) && isset($desc) && isset($buy) && isset($sell)) {
             include_once "connexion.php";
+
+            // mysqli_real_escape_string échappe les caractères spéciaux dans les variables en les précédant d'un antislash
+            $name = mysqli_real_escape_string($con, $name);
+            $desc = mysqli_real_escape_string($con, $desc);
+            $buy = mysqli_real_escape_string($con, $buy);
+            $sell = mysqli_real_escape_string($con, $sell);
+            
             $req = mysqli_query($con, "INSERT INTO stock VALUES(NULL, '$name', '$desc', '$buy', '$sell')");
             if ($req) {
                 header("location: index.php");
